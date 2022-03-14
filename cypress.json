@@ -1,0 +1,20 @@
+{
+	"chromeWebSecurity": false,
+	"watchForFileChanges": false,
+	"waitForAnimations": true,
+	"viewportHeight": 720,
+	"viewportWidth": 1280,
+	"videoUploadOnPasses": false,
+	"defaultCommandTimeout": 6000,
+	"pageLoadTimeout": 8000,
+	"testFiles": "**/*.{feature,features}",
+	"supportFile": "./cypress/support/index.js",
+	"ignoreTestFiles": [
+		"*.md"
+	],
+	"baseUrl": "https://playground.primarybid.com",
+	"env": {
+		"username": "qa",
+		"password": ""
+	}
+}

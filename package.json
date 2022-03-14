@@ -1,0 +1,37 @@
+{
+  "name": "cypress_primarybid",
+  "version": "1.0.0",
+  "description": "Cypress Repo for PrimaryBid Tech Test",
+  "author": "Prasanna",
+  "scripts": {
+    "cy:open": "npm run delete:reports; cypress open; npm run config:reports",
+    "cy:run": "npm run delete:reports; cypress run; npm run config:reports",
+    "cy:headed": "cypress run --headed",
+    "cy:edge": "cypress run --browser edge",
+    "cy:chrome": "cypress run --browser chrome",
+    "cy:firefox": "cypress run --browser firefox",
+    "delete:reports": "rm -rf reports/JSON/cucumber-json/* || true; rm -rf reports/* || true",
+    "config:reports": "node cucumber-html-report.js"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/integration/StepDefinitions",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "reports/JSON/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "dependencies": {
+    "cucumber": "^7.0.0-rc.0",
+    "cucumber-html-reporter": "^5.5.0",
+    "cypress": "^9.5.1",
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "fs-extra": "^10.0.0",
+    "prettier": "^2.5.1",
+    "webpack": "^4.28.2",
+    "@cypress/webpack-preprocessor": "^4.0.2",
+    "multiple-cucumber-html-reporter": "^1.19.0"
+  }
+}
